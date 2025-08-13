@@ -129,14 +129,8 @@ export default function TempPhotoManager({ onAssignPhoto, projectId }: TempPhoto
             {new Date(item.timestamp).toLocaleTimeString()}
           </Text>
           {item.location && (
-            <Text style={[
-              RetroTypography.caption, 
-              { 
-                color: item.location.accuracy && item.location.accuracy <= 15 ? RetroColors.success : RetroColors.warning, 
-                fontSize: 9 
-              }
-            ]}>
-              GPS ±{Math.round(item.location.accuracy || 0)}M
+            <Text style={[RetroTypography.caption, { color: RetroColors.success, fontSize: 9 }]}>
+              GPS TAGGED
             </Text>
           )}
         </View>
@@ -209,27 +203,12 @@ export default function TempPhotoManager({ onAssignPhoto, projectId }: TempPhoto
           </Text>
           {selectedPhoto.location && (
             <>
-              <Text style={[RetroTypography.caption, { color: RetroColors.primary }]}>
+              <Text style={[RetroTypography.caption, { color: RetroColors.success }]}>
                 Lat: {selectedPhoto.location.latitude.toFixed(6)}
               </Text>
-              <Text style={[RetroTypography.caption, { color: RetroColors.primary }]}>
+              <Text style={[RetroTypography.caption, { color: RetroColors.success }]}>
                 Lon: {selectedPhoto.location.longitude.toFixed(6)}
               </Text>
-              <Text style={[
-                RetroTypography.caption, 
-                { 
-                  color: selectedPhoto.location.accuracy && selectedPhoto.location.accuracy <= 15 
-                    ? RetroColors.success 
-                    : RetroColors.warning 
-                }
-              ]}>
-                Accuracy: ±{Math.round(selectedPhoto.location.accuracy || 0)}m
-              </Text>
-              {selectedPhoto.location.altitude && (
-                <Text style={[RetroTypography.caption, { color: RetroColors.secondary }]}>
-                  Altitude: {Math.round(selectedPhoto.location.altitude)}m
-                </Text>
-              )}
             </>
           )}
           

@@ -6,7 +6,6 @@ import { RetroComponents, RetroMeasurements } from '../styles/RetroComponents';
 import { RetroTypography } from '../styles/RetroTypography';
 import { RetroColors, ColorUtils } from '../styles/RetroColors';
 import { cameraService } from '../services/camera';
-import { LocationAccuracyIndicator } from '../components/location';
 import * as Haptics from 'expo-haptics';
 
 export default function CameraScreen() {
@@ -17,7 +16,6 @@ export default function CameraScreen() {
   const [showGrid, setShowGrid] = useState(true);
   const [flashMode, setFlashMode] = useState<'off' | 'on' | 'auto'>('off');
   const [photoCount, setPhotoCount] = useState(0);
-  const [currentLocation, setCurrentLocation] = useState<any>(null);
   const cameraRef = useRef<Camera>(null);
 
   useEffect(() => {
@@ -52,22 +50,13 @@ export default function CameraScreen() {
           await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
           
           const locationInfo = photoData.location 
-            ? `\nLat: ${photoData.location.latitude.toFixed(6)}\nLon: ${photoData.location.longitude.toFixed(6)}\nAccuracy: ±${Math.round(photoData.location.accuracy || 0)}m`
-            : '\nNo GPS location data';
-          
-          const accuracy = photoData.location?.accuracy;
-          const accuracyStatus = accuracy 
-            ? accuracy <= 5 
-              ? ' [EXCELLENT GPS]' 
-              : accuracy <= 15 
-                ? ' [GOOD GPS]' 
-                : ' [POOR GPS]'
-            : ' [NO GPS]';
+            ? `\nLat: ${photoData.location.latitude.toFixed(6)}\nLon: ${photoData.location.longitude.toFixed(6)}`
+            : '\nNo location data';
           
           Alert.alert(
-            'PHOTO CAPTURED' + accuracyStatus, 
-            `Photo saved to temporary storage${locationInfo}\n\nAssign to project later via Gallery`,
-            [{ text: 'CONTINUE', style: 'default' }]
+            'PHOTO CAPTURED', 
+            `Photo saved to temporary storage${locationInfo}\n\nAssign to project later`,
+            [{ text: 'OK', style: 'default' }]
           );
         } else {
           throw new Error('Failed to capture photo');
@@ -258,11 +247,13 @@ export default function CameraScreen() {
                 }} />
               </TouchableOpacity>
               
-              <LocationAccuracyIndicator 
-                showLive={hasLocationPermission}
-                compact={true}
-                onLocationUpdate={setCurrentLocation}
-              />
+              <TouchableOpacity 
+                style={[RetroComponents.touchEnhanced, { padding: RetroMeasurements.spacing.md }]}
+              >
+                <Text style={[RetroTypography.body, { color: hasLocationPermission ? RetroColors.primary : RetroColors.secondary }]}>
+                  GPS
+                </Text>
+              </TouchableOpacity>
             </View>
             
             <Text style={[

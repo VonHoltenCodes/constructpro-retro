@@ -16,7 +16,6 @@
     "format": "prettier --write src/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~5.0.4",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/stack": "^6.4.1",
@@ -32,7 +31,6 @@
     "expo-sqlite": "~15.0.4",
     "expo-status-bar": "~2.2.3",
     "react": "18.3.1",
-    "react-dom": "19.0.0",
     "react-native": "0.76.3",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "~2.21.2",
@@ -41,16 +39,13 @@
     "react-native-safe-area-context": "4.14.0",
     "react-native-screens": "4.2.0",
     "react-native-svg": "15.9.0",
-    "react-native-vector-icons": "^10.2.0",
-    "react-native-web": "^0.20.0",
-    "expo-linking": "~7.1.7"
+    "react-native-vector-icons": "^10.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
-    "babel-plugin-inline-dotenv": "^1.7.0",
     "eslint": "^8.57.1",
     "eslint-config-expo": "^7.1.2",
     "jest": "^29.7.0",

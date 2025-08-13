@@ -1,0 +1,74 @@
+{
+  "expo": {
+    "name": "ConstructPro Retro",
+    "slug": "constructpro-retro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0c0c0c"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vonholtencodes.constructpro-retro",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to document construction progress and capture project photos with location data.",
+        "NSLocationWhenInUseUsageDescription": "This app uses location services to automatically tag photos with GPS coordinates for project documentation.",
+        "NSPhotoLibraryUsageDescription": "This app accesses the photo library to import existing construction photos with metadata.",
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record voice notes with construction photos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0c0c0c"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.vonholtencodes.constructproretro",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow ConstructPro Retro to use the camera for project documentation."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow ConstructPro Retro to use location services to tag photos with GPS coordinates."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow ConstructPro Retro to access photos for project documentation.",
+          "savePhotosPermission": "Allow ConstructPro Retro to save construction photos to your device."
+        }
+      ],
+      "expo-sqlite"
+    ],
+    "developmentClient": {
+      "silentLaunch": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "constructpro-retro-dev"
+      }
+    }
+  }
+}
