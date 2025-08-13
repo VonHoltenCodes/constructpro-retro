@@ -164,6 +164,39 @@ export const RetroComponents = StyleSheet.create({
     ...ColorUtils.phosphorGlow(RetroColors.primary, 1.0),
   },
   
+  // Generic button (same as buttonPrimary)
+  button: {
+    minHeight: RetroMeasurements.touchTarget,
+    backgroundColor: 'transparent',
+    borderWidth: RetroMeasurements.borderWidth.normal,
+    borderColor: RetroColors.primary,
+    borderRadius: RetroMeasurements.borderRadius.sm,
+    paddingHorizontal: RetroMeasurements.spacing.lg,
+    paddingVertical: RetroMeasurements.spacing.sm,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...ColorUtils.phosphorGlow(RetroColors.primary, 0.6),
+  },
+  
+  buttonDanger: {
+    minHeight: RetroMeasurements.touchTarget,
+    backgroundColor: 'transparent',
+    borderWidth: RetroMeasurements.borderWidth.normal,
+    borderColor: RetroColors.error,
+    borderRadius: RetroMeasurements.borderRadius.sm,
+    paddingHorizontal: RetroMeasurements.spacing.lg,
+    paddingVertical: RetroMeasurements.spacing.sm,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...ColorUtils.phosphorGlow(RetroColors.error, 0.6),
+  },
+  
+  buttonSmall: {
+    minHeight: RetroMeasurements.touchTargetSmall,
+    paddingHorizontal: RetroMeasurements.spacing.md,
+    paddingVertical: RetroMeasurements.spacing.xs,
+  },
+  
   fabButton: {
     width: RetroMeasurements.touchTargetLarge,
     height: RetroMeasurements.touchTargetLarge,
@@ -406,6 +439,124 @@ export const RetroComponents = StyleSheet.create({
     minWidth: RetroMeasurements.touchTargetLarge,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  
+  // ADDITIONAL UI COMPONENTS
+  
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: RetroMeasurements.spacing.md,
+  },
+  
+  closeButton: {
+    padding: RetroMeasurements.spacing.sm,
+  },
+  
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: RetroMeasurements.spacing.md,
+    gap: RetroMeasurements.spacing.sm,
+  },
+  
+  warning: {
+    backgroundColor: ColorUtils.withOpacity(RetroColors.warning, 0.2),
+    borderColor: RetroColors.warning,
+  },
+
+  // Modal components
+  modalContainer: {
+    flex: 1,
+    backgroundColor: RetroColors.darkBg,
+  },
+
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: RetroMeasurements.spacing.md,
+    paddingVertical: RetroMeasurements.spacing.md,
+    borderBottomWidth: RetroMeasurements.borderWidth.normal,
+    borderBottomColor: RetroColors.primary,
+  },
+
+  centerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  formSection: {
+    marginVertical: RetroMeasurements.spacing.md,
+    padding: RetroMeasurements.spacing.md,
+    backgroundColor: RetroColors.darkAccent,
+    borderRadius: RetroMeasurements.borderRadius.md,
+    borderWidth: RetroMeasurements.borderWidth.thin,
+    borderColor: RetroColors.lightAccent,
+  },
+
+  infoRow: {
+    marginVertical: RetroMeasurements.spacing.sm,
+  },
+
+  inputRow: {
+    flexDirection: 'row',
+    marginVertical: RetroMeasurements.spacing.sm,
+  },
+
+  textInput: {
+    minHeight: RetroMeasurements.touchTarget,
+    backgroundColor: RetroColors.darkBg,
+    borderWidth: RetroMeasurements.borderWidth.normal,
+    borderColor: RetroColors.lightAccent,
+    borderRadius: RetroMeasurements.borderRadius.sm,
+    paddingHorizontal: RetroMeasurements.spacing.md,
+    paddingVertical: RetroMeasurements.spacing.sm,
+    color: RetroColors.textPrimary,
+    ...RetroTypography.input,
+  },
+
+  secondaryButton: {
+    minHeight: RetroMeasurements.touchTarget,
+    backgroundColor: 'transparent',
+    borderWidth: RetroMeasurements.borderWidth.normal,
+    borderColor: RetroColors.secondary,
+    borderRadius: RetroMeasurements.borderRadius.sm,
+    paddingHorizontal: RetroMeasurements.spacing.lg,
+    paddingVertical: RetroMeasurements.spacing.sm,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...ColorUtils.phosphorGlow(RetroColors.secondary, 0.6),
+  },
+
+  primaryButton: {
+    minHeight: RetroMeasurements.touchTarget,
+    backgroundColor: 'transparent',
+    borderWidth: RetroMeasurements.borderWidth.normal,
+    borderColor: RetroColors.primary,
+    borderRadius: RetroMeasurements.borderRadius.sm,
+    paddingHorizontal: RetroMeasurements.spacing.lg,
+    paddingVertical: RetroMeasurements.spacing.sm,
+    justifyContent: 'center',
+    alignItems: 'center',
+    ...ColorUtils.phosphorGlow(RetroColors.primary, 0.6),
+  },
+
+  mapContainer: {
+    marginVertical: RetroMeasurements.spacing.md,
+    height: 300,
+    borderWidth: RetroMeasurements.borderWidth.normal,
+    borderColor: RetroColors.primary,
+    borderRadius: RetroMeasurements.borderRadius.md,
+    overflow: 'hidden',
+    ...ColorUtils.phosphorGlow(RetroColors.primary, 0.4),
+  },
+
+  map: {
+    flex: 1,
   },
 });
 

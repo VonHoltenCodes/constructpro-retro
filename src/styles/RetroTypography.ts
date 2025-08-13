@@ -138,6 +138,16 @@ export const RetroTypography = {
     letterSpacing: 2,
   },
   
+  // Button text (alias for button)
+  buttonText: {
+    fontSize: 16,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'bold' as const,
+    color: RetroColors.primary,
+    textTransform: 'uppercase' as const,
+    letterSpacing: 1,
+  },
+  
   // Caption/metadata text
   caption: {
     fontSize: 12,
@@ -231,6 +241,81 @@ export const RetroTypography = {
     fontWeight: 'normal' as const,
     color: RetroColors.warning,
     lineHeight: 20,
+  },
+  
+  // ALIASES for common usage
+  heading1: {
+    fontSize: 28,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'bold' as const,
+    color: RetroColors.primary,
+    textTransform: 'uppercase' as const,
+    letterSpacing: 2,
+    lineHeight: 34,
+  },
+  
+  heading2: {
+    fontSize: 24,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'bold' as const,
+    color: RetroColors.secondary,
+    textTransform: 'uppercase' as const,
+    letterSpacing: 2,
+    lineHeight: 30,
+  },
+  
+  title: {
+    fontSize: 20,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'bold' as const,
+    color: RetroColors.primary,
+    textTransform: 'uppercase' as const,
+    letterSpacing: 1,
+    lineHeight: 26,
+  },
+  
+  subtitle: {
+    fontSize: 18,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'normal' as const,
+    color: RetroColors.secondary,
+    letterSpacing: 1,
+    lineHeight: 24,
+  },
+  
+  small: {
+    fontSize: 12,
+    fontFamily: RetroFonts.body,
+    fontWeight: 'normal' as const,
+    color: RetroColors.textSecondary,
+    lineHeight: 16,
+  },
+  
+  mono: {
+    fontSize: 14,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'normal' as const,
+    color: RetroColors.text,
+    letterSpacing: 0.5,
+    lineHeight: 20,
+  },
+
+  // Additional aliases
+  monoText: {
+    fontSize: 14,
+    fontFamily: RetroFonts.monospace,
+    fontWeight: 'normal' as const,
+    color: RetroColors.textPrimary,
+    letterSpacing: 0.5,
+    lineHeight: 20,
+  },
+
+  smallText: {
+    fontSize: 12,
+    fontFamily: RetroFonts.body,
+    fontWeight: 'normal' as const,
+    color: RetroColors.textSecondary,
+    lineHeight: 16,
   },
 } as const;
 

@@ -14,11 +14,14 @@ export const RetroColors = {
   darkBg: '#0C0C0C',        // Terminal Black - Main background
   darkAccent: '#1A1A1A',    // Darker accent - Cards, panels
   lightAccent: '#3D3D3D',   // Lighter accent - Borders, dividers
+  backgroundDark: '#0C0C0C', // Alias for darkBg
   
   // Text Colors
   textPrimary: '#FFFFFF',   // Pure White - Primary text
   textSecondary: '#CCCCCC', // Light Gray - Secondary text
   textMuted: '#999999',     // Medium Gray - Muted text
+  textDim: '#666666',       // Dim Gray - Very muted text
+  text: '#FFFFFF',          // Alias for textPrimary
   
   // Status Colors (Retro Style)
   success: '#00FF41',       // Matrix Green - Success states
